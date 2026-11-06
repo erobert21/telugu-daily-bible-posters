@@ -30,37 +30,54 @@ def clean_usfm_text(text):
     text = text.replace("|", " ").replace("~", " ").replace("¶", " ")
     return re.sub(r"\s+", " ", text).strip()
 
+
 def parse_archive(path, suffix):
     books = {}
     with zipfile.ZipFile(path) as archive:
         for name in archive.namelist():
             if not name.endswith(".usfm") or name.startswith("00-"):
                 continue
-            match = re.match(r"\d+-(.+?)" + re.escape(suffix) + r"\.usfm$", name)
+
+            match = re.match(
+                r"\d+-(.+?)" + re.escape(suffix) + r"\.usfm$",
+                name
+            )
             if not match:
                 continue
+
             book = match.group(1)
             raw = archive.read(name).decode("utf-8-sig")
             verses = {}
-            chapters = re.finditer(r"\\c\s+(\d+)(.*?)(?=\\c\s+\d+|\\id\s|$)", raw, flags=re.S)
+
+            chapters = re.finditer(
+                r"\\c\s+(\d+)(.*?)(?=\\c\s+\d+|\\id\s|$)",
+                raw,
+                flags=re.S
+            )
+
             for chapter_match in chapters:
                 chapter = int(chapter_match.group(1))
                 body = chapter_match.group(2)
-                
-verse_matches = re.finditer(
-    r"\\v\s+(\d+)(?:-(\d+))?(?:/[a-z])?\s+(.*?)(?=\\v\s+\d+(?:-\d+)?(?:/[a-z])?\s+|$)",
-    body, flags=re.S
-)
-for verse_match in verse_matches:
-    first = int(verse_match.group(1))
-    last = int(verse_match.group(2) or first)
-    wording = clean_usfm_text(verse_match.group(3))
-    if wording:
-        for verse in range(first, last + 1):
-            verses[(chapter, verse)] = wording
+
+                verse_matches = re.finditer(
+                    r"\\v\s+(\d+)(?:-(\d+))?(?:/[a-z])?\s+(.*?)(?=\\v\s+\d+(?:-\d+)?(?:/[a-z])?\s+|$)",
+                    body,
+                    flags=re.S
+                )
+
+                for verse_match in verse_matches:
+                    first = int(verse_match.group(1))
+                    last = int(verse_match.group(2) or first)
+                    wording = clean_usfm_text(verse_match.group(3))
+
+                    if wording:
+                        for verse in range(first, last + 1):
+                            verses[(chapter, verse)] = wording
 
             books[book] = verses
+
     return books
+
 
 def main():
     for required in (TEL_ZIP, ENG_ZIP, REFS):
