@@ -46,15 +46,19 @@ def parse_archive(path, suffix):
             for chapter_match in chapters:
                 chapter = int(chapter_match.group(1))
                 body = chapter_match.group(2)
-                verse_matches = re.finditer(
-                    r"\\v\s+(\d+)(?:-[\d]+)?(?:/[a-z])?\s+(.*?)(?=\\v\s+\d+(?:-[\d]+)?(?:/[a-z])?\s+|$)",
-                    body, flags=re.S
-                )
-                for verse_match in verse_matches:
-                    verse = int(verse_match.group(1))
-                    wording = clean_usfm_text(verse_match.group(2))
-                    if wording:
-                        verses[(chapter, verse)] = wording
+                
+verse_matches = re.finditer(
+    r"\\v\s+(\d+)(?:-(\d+))?(?:/[a-z])?\s+(.*?)(?=\\v\s+\d+(?:-\d+)?(?:/[a-z])?\s+|$)",
+    body, flags=re.S
+)
+for verse_match in verse_matches:
+    first = int(verse_match.group(1))
+    last = int(verse_match.group(2) or first)
+    wording = clean_usfm_text(verse_match.group(3))
+    if wording:
+        for verse in range(first, last + 1):
+            verses[(chapter, verse)] = wording
+
             books[book] = verses
     return books
 
