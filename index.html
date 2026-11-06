@@ -15,24 +15,24 @@ main{width:min(100%,620px);margin:auto}
 .brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:2px;margin:0 0 14px;color:#4b2616}
 .poster{position:relative;overflow:hidden;aspect-ratio:1/1;border-radius:18px;color:var(--ink);background:var(--paper);box-shadow:0 16px 44px #4a241b24;display:flex;flex-direction:column;text-align:center}
 .poster:before{content:"";position:absolute;inset:12px;border:1px solid #c77a3c88;border-radius:12px;pointer-events:none;z-index:4}
-.top{position:relative;z-index:2;padding:3.5% 7% 0;flex:0 0 auto}
-.brandline{font:800 clamp(10px,2.5vw,14px) Arial,sans-serif;letter-spacing:1.2px;color:#7c3512}
-.heading{font-size:clamp(20px,5vw,31px);font-weight:800;line-height:1.25;margin:5px auto 0;color:#35180d}
+.top{position:relative;z-index:2;padding:5% 7% 0;flex:0 0 auto}
+.brandline{font:800 clamp(9px,2.25vw,13px) Arial,sans-serif;letter-spacing:1px;line-height:1.35;color:#7c3512}
+.heading{font-size:clamp(19px,4.5vw,28px);font-weight:800;line-height:1.2;margin:3px auto 0;color:#35180d}
 .heading .accent{color:#d66b0a}
 .rule{height:3px;width:58px;background:linear-gradient(90deg,#a94708,#f2a51a);margin:6px auto}
-.date{font-size:clamp(11px,2.6vw,15px);font-weight:800;color:#633016}
-.theme{font:700 clamp(9px,2.2vw,12px) Arial,sans-serif;letter-spacing:1.5px;color:#a94e0b;margin-top:3px;text-transform:uppercase}
-.verses{position:relative;z-index:3;padding:1.8% 6% 0;display:flex;flex-direction:column;gap:6px;flex:0 0 auto}
-.verse-card{background:#fffaf0ed;border:1px solid #d8b28a;border-radius:10px;padding:5px 10px 4px;text-align:center}
+.date{font-size:clamp(10px,2.35vw,14px);font-weight:800;color:#633016}
+.theme{font:700 clamp(8px,2vw,11px) Arial,sans-serif;letter-spacing:1.3px;color:#a94e0b;margin-top:2px;text-transform:uppercase}
+.verses{position:relative;z-index:3;padding:1.3% 6% 0;display:flex;flex-direction:column;gap:5px;flex:0 0 auto}
+.verse-card{background:#fffaf0ed;border:1px solid #d8b28a;border-radius:10px;padding:3px 9px;text-align:center}
 .lang{font:800 clamp(8px,1.9vw,10px) Arial,sans-serif;letter-spacing:1.2px;color:#a64e0c;margin-bottom:2px}
-.verse{font-size:clamp(10px,2.35vw,14px);line-height:1.36;font-weight:600;overflow-wrap:anywhere;color:#32170d}
+.verse{font-size:clamp(9px,2.05vw,12.5px);line-height:1.27;font-weight:600;overflow-wrap:anywhere;color:#32170d}
 .ref{font-size:clamp(9px,2.1vw,12px);font-weight:800;color:#a64e0c;margin-top:2px}
 .scene{position:relative;z-index:1;flex:1 1 auto;min-height:0;margin-top:2%;background:#c87928;overflow:hidden}
 .scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fffaf322 0%,#fffaf300 16%),linear-gradient(0deg,#35170c55 0%,transparent 38%),var(--scene);background-size:cover;background-position:center 42%;background-repeat:no-repeat}
-.scene-label{position:absolute;left:4%;bottom:12%;z-index:2;color:white;text-align:left;text-shadow:0 2px 8px #32170d88;font-family:Georgia,serif;font-size:clamp(18px,4.6vw,30px);font-style:italic;font-weight:700;background:linear-gradient(110deg,#b84a00ed,#e98b0de8);padding:8px 22px 10px 16px;clip-path:polygon(3% 8%,96% 0,100% 78%,88% 100%,0 88%)}
-.bottom{position:absolute;z-index:3;left:0;right:0;bottom:0;background:linear-gradient(0deg,#29150fc9,transparent);padding:22px 7% 2.5%;flex:0 0 auto}
-.footer{font-size:clamp(9px,2vw,11px);color:#fff;line-height:1.4;text-shadow:0 1px 4px #251008}
-.credits{font:800 clamp(6px,1.5vw,8px) Arial,sans-serif;letter-spacing:.8px;color:#fff;margin-top:3px;text-shadow:0 1px 4px #251008}
+.scene-label{position:absolute;left:4%;bottom:25%;z-index:2;color:white;text-align:left;text-shadow:0 2px 8px #32170d88;font-family:Georgia,serif;font-size:clamp(17px,4.2vw,28px);font-style:italic;font-weight:700;background:linear-gradient(110deg,#b84a00ed,#e98b0de8);padding:7px 20px 8px 14px;clip-path:polygon(3% 8%,96% 0,100% 78%,88% 100%,0 88%)}
+.bottom{position:absolute;z-index:3;left:0;right:0;bottom:0;background:linear-gradient(0deg,#29150fe0,transparent);padding:8px 5% 2%;flex:0 0 auto}
+.footer{display:none}
+.credits{font:800 clamp(6px,1.35vw,7px) Arial,sans-serif;letter-spacing:.7px;color:#fff;margin-top:0;text-shadow:0 1px 4px #251008}
 .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
 button{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#51230f;color:#fff;cursor:pointer}
 select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white}
@@ -40,7 +40,7 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 .readlinks a{color:#51230f;font-size:12px;font-weight:700}
 .note{text-align:center;color:#6e625b;font-size:11px;line-height:1.7}
 .status{padding:14px;background:#fff;border:1px solid #ddd;border-radius:12px;text-align:center;line-height:1.7}
-@media(max-width:420px){body{padding:8px}.poster{border-radius:12px}.top{padding-top:3%}.brandline{font-size:9px}.verses{gap:5px;padding-left:5%;padding-right:5%}.verse-card{padding:4px 7px}.verse{font-size:clamp(9px,2.3vw,12px);line-height:1.32}.scene-label{bottom:16%;padding:6px 16px}.bottom{padding:18px 6% 2%}}
+@media(max-width:420px){body{padding:8px}.poster{border-radius:12px}.top{padding-top:5%}.brandline{font-size:9px}.verses{gap:4px;padding-left:5%;padding-right:5%}.verse-card{padding:3px 6px}.verse{font-size:clamp(9px,2.05vw,11px);line-height:1.25}.scene-label{bottom:24%;padding:6px 15px}.bottom{padding:18px 6% 2%}}
 </style></head>
 <body><main>
 <div class="brand">HALLELUJAH MINISTRIES VADDESWARAM</div>
