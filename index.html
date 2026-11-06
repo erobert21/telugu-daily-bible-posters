@@ -3,97 +3,130 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#171b46">
-<title>Hallelujah Ministries | Daily Bible Verse Poster</title>
+<title>Hallelujah Ministries | Daily Bible Verse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#171b46;--gold:#d6ad61}
+:root{--navy:#171b46;--gold:#e4c17c;--ink:#22264b}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:20px;background:#eef0f7;color:#171b46;font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
+body{margin:0;min-height:100vh;padding:18px;background:#eef0f7;color:var(--ink);font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
 main{width:min(100%,560px);margin:auto}
-.brand{text-align:center;font-size:12px;font-weight:800;letter-spacing:1.5px;margin:0 0 14px;color:#36395d}
-.poster{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:22px;color:white;background:radial-gradient(ellipse at 78% 18%,#d9b96f88,transparent 30%),radial-gradient(ellipse at 10% 85%,#7d70a5aa,transparent 36%),linear-gradient(145deg,#121638 0%,#29356b 50%,#765d77 100%);box-shadow:0 16px 44px #10163830;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:10% 8%}
-.poster:before{content:"";position:absolute;inset:5%;border:1px solid #e7cf9b99;border-radius:16px;pointer-events:none}
+.brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:1.7px;margin:0 0 14px;color:#36395d}
+.poster{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:22px;color:white;background:radial-gradient(ellipse at 78% 14%,#d9b96f70,transparent 30%),radial-gradient(ellipse at 8% 90%,#7d70a5a8,transparent 38%),linear-gradient(145deg,#111638 0%,#29356b 52%,#765d77 100%);box-shadow:0 16px 44px #10163830;display:flex;flex-direction:column;justify-content:space-between;text-align:center;padding:7.5% 8%}
+.poster:before{content:"";position:absolute;inset:4%;border:1px solid #e7cf9b99;border-radius:16px;pointer-events:none}
 .glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:#f5d89c22;filter:blur(26px);top:6%;right:-22%}
-.top,.center,.bottom{position:relative;z-index:1;width:100%}
-.brandline{font-size:clamp(11px,2.7vw,15px);font-weight:800;letter-spacing:1px;color:#f6dda8}
-.heading{font-size:clamp(23px,6vw,34px);font-weight:800;line-height:1.5;margin-top:10px}
-.rule{height:2px;width:56px;background:var(--gold);margin:18px auto}
-.date{font-size:clamp(14px,3.4vw,18px);font-weight:700;color:#f8e6c3}
-.reference{font-size:clamp(27px,7vw,42px);font-weight:800;line-height:1.6;color:#fff;margin:14px 0;text-shadow:0 2px 14px #0005}
-.prompt{font-size:clamp(12px,3vw,15px);color:#f8e6c3;line-height:1.8}
-.footer{font-size:clamp(10px,2.6vw,13px);color:#f7e7c9;line-height:1.8}
+.top,.content,.bottom{position:relative;z-index:1;width:100%}
+.brandline{font:800 clamp(10px,2.5vw,14px) Arial,sans-serif;letter-spacing:1px;color:#f6dda8}
+.heading{font-size:clamp(22px,5.8vw,32px);font-weight:800;line-height:1.45;margin-top:10px}
+.rule{height:2px;width:52px;background:var(--gold);margin:13px auto}
+.date{font-size:clamp(12px,3vw,16px);font-weight:700;color:#f8e6c3}
+.theme{font-size:clamp(10px,2.5vw,13px);color:#f8e6c3;margin-top:4px}
+.verse-card{background:#ffffff12;border:1px solid #ffffff24;border-radius:13px;padding:10px 12px;margin:9px 0;text-align:center}
+.lang{font:800 10px Arial,sans-serif;letter-spacing:1.4px;color:#f6dda8;margin-bottom:6px}
+.verse{font-size:clamp(12px,3vw,16px);line-height:1.65;font-weight:500;max-height:8.25em;overflow:hidden;overflow-wrap:anywhere}
+.ref{font-size:clamp(11px,2.7vw,14px);font-weight:800;color:#f8e6c3;margin-top:6px}
+.content{display:flex;flex-direction:column;justify-content:center;min-height:0;margin:8px 0;flex:1}
+.bottom .footer{font-size:clamp(9px,2.2vw,11px);color:#f7e7c9;line-height:1.7}
+.credits{font:9px Arial,sans-serif;letter-spacing:.4px;color:#f7e7c9;opacity:.9;margin-top:4px}
 .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
-button,a.btn{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#171b46;color:#fff;text-decoration:none;cursor:pointer}
-a.read{display:block;text-align:center;color:#25294f;margin:12px auto 0;text-decoration:underline;font-weight:700}
-.note{text-align:center;color:#5c6076;font-size:12px;line-height:1.7}
+button{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#171b46;color:#fff;cursor:pointer}
 select{padding:10px;border:1px solid #c8cada;border-radius:10px;background:white}
+.readlinks{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:8px auto}
+.readlinks a{color:#25294f;font-size:12px;font-weight:700}
+.note{text-align:center;color:#5c6076;font-size:11px;line-height:1.7}
+.status{padding:14px;background:#fff;border:1px solid #ddd;border-radius:12px;text-align:center;line-height:1.7}
+@media(max-width:380px){body{padding:8px}.poster{border-radius:14px;padding:7% 7%}.verse-card{padding:7px 8px;margin:6px 0}.rule{margin:8px auto}}
 </style></head>
 <body><main>
 <div class="brand">HALLELUJAH MINISTRIES VADDESWARAM</div>
-<section class="poster" id="poster">
+<div id="status" class="status">బైబిల్ వాక్యాలు లోడ్ అవుతున్నాయి…</div>
+<section class="poster" id="poster" hidden>
  <div class="glow"></div>
  <div class="top">
   <div class="brandline">HALLELUJAH MINISTRIES VADDESWARAM</div>
   <div class="heading">ఈ రోజు బైబిల్ వాక్యం</div>
   <div class="rule"></div>
+  <div class="date" id="date-label"></div>
+  <div class="theme" id="theme-label"></div>
  </div>
- <div class="center">
-  <div class="date" id="date-label">Loading…</div>
-  <div class="reference" id="ref-label"></div>
-  <div class="prompt">పూర్తి వాక్యాన్ని చదవండి</div>
+ <div class="content">
+  <div class="verse-card">
+   <div class="lang">TELUGU · IRV 2019</div>
+   <div class="verse" id="verse-te"></div>
+   <div class="ref" id="ref-te"></div>
+  </div>
+  <div class="verse-card">
+   <div class="lang">ENGLISH · WORLD ENGLISH BIBLE</div>
+   <div class="verse" id="verse-en"></div>
+   <div class="ref" id="ref-en"></div>
+  </div>
  </div>
  <div class="bottom">
   <div class="rule"></div>
   <div class="footer">దేవుని వాక్యము మనకు వెలుగు</div>
-  <div class="footer" style="font-family:Arial,sans-serif;letter-spacing:1px">DAILY SCRIPTURE · TELUGU O.V. BIBLE</div>
+  <div class="credits">TELUGU IRV 2019 · ENGLISH WEB · HALLELUJAH MINISTRIES</div>
  </div>
 </section>
 <div class="controls">
- <button id="download">పోస్టర్ డౌన్‌లోడ్</button>
- <button id="share">షేర్ చేయండి</button>
- <select id="preview-day" aria-label="Preview day"></select>
+ <button id="download" disabled>పోస్టర్ డౌన్‌లోడ్</button>
+ <button id="share" disabled>షేర్ చేయండి</button>
+ <select id="preview-day" aria-label="Preview day" disabled></select>
 </div>
-<a class="read" id="read-link" href="#" target="_blank" rel="noopener">తెలుగు బైబిల్‌లో పూర్తి వాక్యాన్ని చదవండి ↗</a>
-<p class="note">ఈ పోస్టర్‌లో వాక్య సూచన మాత్రమే ఉంటుంది. పూర్తి బైబిల్ వాక్యాన్ని అధికారిక ఆన్‌లైన్ బైబిల్‌లో చదవండి. ఇంటర్నెట్ అవసరం.</p>
+<div class="readlinks">
+ <a href="https://ebible.org/tel2017/" target="_blank" rel="noopener">Telugu IRV source ↗</a>
+ <a href="https://ebible.org/engwebp/" target="_blank" rel="noopener">English WEB source ↗</a>
+</div>
+<p class="note">Telugu IRV 2019 is licensed under CC BY-SA 4.0. English WEB text is public domain. Full attribution and licence details are available in SCRIPTURE-LICENSES.md.</p>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-let daily=[], selected=null, month=Number(new URLSearchParams(location.search).get("month"));
-const months=["జనవరి","ఫిబ్రవరి","మార్చి","ఏప్రిల్","మే","జూన్","జూలై","ఆగస్టు","సెప్టెంబర్","అక్టోబర్","నవంబర్","డిసెంబర్"];
+let daily=[],selected=null,month=Number(new URLSearchParams(location.search).get("month"));
+const $=id=>document.getElementById(id);
+function fitVerse(el,max=16,min=10){
+ let size=max;el.style.fontSize=size+"px";
+ while(el.scrollHeight>el.clientHeight+1&&size>min){size-=.5;el.style.fontSize=size+"px";}
+}
 function setDay(day){
  const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
  selected=daily.find(x=>x.month===m&&x.day===day);
  if(!selected)return;
- document.getElementById("date-label").textContent=selected.month_te+" "+selected.day+" · "+selected.month_en+" "+selected.day;
- document.getElementById("ref-label").textContent=selected.reference_te;
- document.getElementById("read-link").href=selected.url;
+ $("date-label").textContent=selected.month_te+" "+selected.day+" · "+selected.month_en+" "+selected.day;
+ $("theme-label").textContent=selected.theme||"";
+ $("verse-te").textContent=selected.verse_te;
+ $("verse-en").textContent=selected.verse_en;
+ $("ref-te").textContent=selected.reference_te;
+ $("ref-en").textContent=selected.reference_code;
  document.title=selected.reference_te+" | Hallelujah Ministries";
+ requestAnimationFrame(()=>{fitVerse($("verse-te"));fitVerse($("verse-en"));});
 }
 async function posterBlob(){
- const node=document.getElementById("poster");
+ const node=$("poster");
  const canvas=await html2canvas(node,{scale:3,backgroundColor:null,useCORS:true});
  return await new Promise(resolve=>canvas.toBlob(resolve,"image/png"));
 }
-document.getElementById("download").onclick=async()=>{
- const blob=await posterBlob();const url=URL.createObjectURL(blob);
+$("download").onclick=async()=>{
+ const blob=await posterBlob(),url=URL.createObjectURL(blob);
  const a=document.createElement("a");a.href=url;a.download=`Bible_Verse_${selected.month_en}_${selected.day}.png`;a.click();URL.revokeObjectURL(url);
 };
-document.getElementById("share").onclick=async()=>{
- const blob=await posterBlob();const file=new File([blob],`Bible_Verse_${selected.month_en}_${selected.day}.png`,{type:"image/png"});
- if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"Today's Telugu Bible Verse"});}
- else{const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=file.name;a.click();URL.revokeObjectURL(url);alert("Image downloaded. You can share it from your gallery.");}
+$("share").onclick=async()=>{
+ const blob=await posterBlob(),file=new File([blob],`Bible_Verse_${selected.month_en}_${selected.day}.png`,{type:"image/png"});
+ if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"Today's Bilingual Bible Verse"});}
+ else{const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=file.name;a.click();URL.revokeObjectURL(url);alert("Image downloaded. You can share it from your gallery.");}
 };
 (async()=>{
- const response=await fetch("./data/daily-references.json");daily=await response.json();
- const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
- const max=daily.filter(x=>x.month===m).length;
- const today=new Date().getDate();
- const initial=Math.min(today,max);
- const select=document.getElementById("preview-day");
- for(let d=1;d<=max;d++){const o=document.createElement("option");o.value=d;o.textContent="Day "+d;if(d===initial)o.selected=true;select.appendChild(o);}
- select.onchange=()=>setDay(Number(select.value));
- setDay(initial);
+ try{
+  const response=await fetch("./data/daily-verses.json");
+  if(!response.ok)throw new Error("daily-verses.json not found. Run the bilingual verse build workflow.");
+  daily=await response.json();
+  if(!daily.length)throw new Error("The bilingual verse data file is empty.");
+  const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
+  const max=daily.filter(x=>x.month===m).length,initial=Math.min(new Date().getDate(),max||1);
+  for(let d=1;d<=max;d++){const o=document.createElement("option");o.value=d;o.textContent="Day "+d;if(d===initial)o.selected=true;$("preview-day").appendChild(o);}
+  $("preview-day").onchange=()=>setDay(Number($("preview-day").value));
+  $("status").hidden=true;$("poster").hidden=false;
+  $("download").disabled=$("share").disabled=$("preview-day").disabled=false;
+  setDay(initial);
+ }catch(e){$("status").textContent="Verse data is not ready yet. "+e.message+" Please check the GitHub Actions build.";console.error(e);}
 })();
 </script></body></html>
