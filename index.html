@@ -2,59 +2,60 @@
 <html lang="te">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#171b46">
+<meta name="theme-color" content="#fffaf3">
 <title>Hallelujah Ministries | Daily Bible Verse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#171b46;--gold:#e4c17c;--ink:#22264b}
+:root{--ink:#32170d;--orange:#c85b08;--gold:#e99a16;--paper:#fffaf3}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:18px;background:#eef0f7;color:var(--ink);font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
-main{width:min(100%,560px);margin:auto}
-.brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:1.7px;margin:0 0 14px;color:#36395d}
-.poster{position:relative;overflow:hidden;aspect-ratio:2/3;border-radius:22px;color:white;background:radial-gradient(ellipse at 78% 14%,#d9b96f70,transparent 30%),radial-gradient(ellipse at 8% 90%,#7d70a5a8,transparent 38%),linear-gradient(145deg,#111638 0%,#29356b 52%,#765d77 100%);box-shadow:0 16px 44px #10163830;display:flex;flex-direction:column;justify-content:space-between;text-align:center;padding:7.5% 8%}
-.poster:before{content:"";position:absolute;inset:4%;border:1px solid #e7cf9b99;border-radius:16px;pointer-events:none}
-.glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:#f5d89c22;filter:blur(26px);top:6%;right:-22%}
-.top,.content,.bottom{position:relative;z-index:1;width:100%}
-.top{flex:0 0 auto}
-.bottom{flex:0 0 auto}
-.brandline{font:800 clamp(10px,2.5vw,14px) Arial,sans-serif;letter-spacing:1px;color:#f6dda8}
-.heading{font-size:clamp(22px,5.8vw,32px);font-weight:800;line-height:1.45;margin-top:10px}
-.rule{height:2px;width:52px;background:var(--gold);margin:13px auto}
-.date{font-size:clamp(12px,3vw,16px);font-weight:700;color:#f8e6c3}
-.theme{font-size:clamp(10px,2.5vw,13px);color:#f8e6c3;margin-top:5px;line-height:1.4}
-.verse-card{background:#ffffff12;border:1px solid #ffffff24;border-radius:13px;padding:12px;text-align:center;flex:0 0 auto;min-height:auto;display:flex;flex-direction:column;justify-content:center;gap:7px}
-.lang{font:800 10px Arial,sans-serif;letter-spacing:1.4px;color:#f6dda8;margin-bottom:6px}
-.verse{font-size:clamp(11px,2.7vw,15px);line-height:1.5;font-weight:500;max-height:none;overflow:visible;overflow-wrap:anywhere;flex:0 0 auto}
-.ref{font-size:clamp(11px,2.7vw,14px);font-weight:800;color:#f8e6c3;margin-top:6px}
-.content{display:flex;flex-direction:column;justify-content:center;gap:10px;min-height:0;margin:10px 0;flex:1 1 auto}
-.bottom .footer{font-size:clamp(9px,2.2vw,11px);color:#f7e7c9;line-height:1.7}
-.credits{font:9px Arial,sans-serif;letter-spacing:.4px;color:#f7e7c9;opacity:.9;margin-top:4px}
+body{margin:0;min-height:100vh;padding:18px;background:#f3eee6;color:var(--ink);font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
+main{width:min(100%,620px);margin:auto}
+.brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:2px;margin:0 0 14px;color:#4b2616}
+.poster{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:18px;color:var(--ink);background:var(--paper);box-shadow:0 16px 44px #4a241b24;display:flex;flex-direction:column;text-align:center}
+.poster:before{content:"";position:absolute;inset:12px;border:1px solid #c77a3c88;border-radius:12px;pointer-events:none;z-index:4}
+.top{position:relative;z-index:2;padding:5.5% 7% 0;flex:0 0 auto}
+.brandline{font:800 clamp(10px,2.5vw,14px) Arial,sans-serif;letter-spacing:1.2px;color:#7c3512}
+.heading{font-size:clamp(21px,5.8vw,34px);font-weight:800;line-height:1.42;margin:10px auto 0;color:#35180d}
+.heading .accent{color:#d66b0a}
+.rule{height:3px;width:68px;background:linear-gradient(90deg,#a94708,#f2a51a);margin:10px auto}
+.date{font-size:clamp(12px,3vw,17px);font-weight:800;color:#633016}
+.theme{font:700 clamp(10px,2.5vw,13px) Arial,sans-serif;letter-spacing:1.5px;color:#a94e0b;margin-top:5px;text-transform:uppercase}
+.verses{position:relative;z-index:3;padding:2.5% 7% 0;display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
+.verse-card{background:#fffaf0ed;border:1px solid #d8b28a;border-radius:12px;padding:8px 12px 7px;text-align:center}
+.lang{font:800 clamp(9px,2.2vw,11px) Arial,sans-serif;letter-spacing:1.3px;color:#a64e0c;margin-bottom:4px}
+.verse{font-size:clamp(11px,2.8vw,16px);line-height:1.48;font-weight:600;overflow-wrap:anywhere;color:#32170d}
+.ref{font-size:clamp(10px,2.4vw,13px);font-weight:800;color:#a64e0c;margin-top:4px}
+.scene{position:relative;z-index:1;flex:1 1 auto;min-height:0;margin-top:-1%;background:#c87928;overflow:hidden}
+.scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fffaf3 0%,#fffaf300 32%),linear-gradient(0deg,#35170c88 0%,transparent 40%),var(--scene);background-size:cover;background-position:center 48%;background-repeat:no-repeat}
+.scene-label{position:absolute;left:5%;bottom:10%;z-index:2;color:white;text-align:left;text-shadow:0 2px 8px #32170d88;font-family:Georgia,serif;font-size:clamp(20px,5vw,34px);font-style:italic;font-weight:700}
+.bottom{position:relative;z-index:3;background:#fffaf3;padding:7px 7% 4%;flex:0 0 auto}
+.footer{font-size:clamp(9px,2.2vw,12px);color:#713b20;line-height:1.5}
+.credits{font:800 8px Arial,sans-serif;letter-spacing:1px;color:#a65b28;margin-top:5px}
 .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
-button{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#171b46;color:#fff;cursor:pointer}
-select{padding:10px;border:1px solid #c8cada;border-radius:10px;background:white}
+button{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#51230f;color:#fff;cursor:pointer}
+select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white}
 .readlinks{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:8px auto}
-.readlinks a{color:#25294f;font-size:12px;font-weight:700}
-.note{text-align:center;color:#5c6076;font-size:11px;line-height:1.7}
+.readlinks a{color:#51230f;font-size:12px;font-weight:700}
+.note{text-align:center;color:#6e625b;font-size:11px;line-height:1.7}
 .status{padding:14px;background:#fff;border:1px solid #ddd;border-radius:12px;text-align:center;line-height:1.7}
-@media(max-width:380px){body{padding:8px}.poster{border-radius:14px;padding:7% 7%}.verse-card{padding:7px 8px;margin:6px 0}.rule{margin:8px auto}}
+@media(max-width:420px){body{padding:8px}.poster{border-radius:12px}.top{padding-top:6%}.verses{gap:6px;padding-left:6%;padding-right:6%}.verse-card{padding:6px 8px}.bottom{padding-bottom:5%}.scene-label{bottom:8%}}
 </style></head>
 <body><main>
 <div class="brand">HALLELUJAH MINISTRIES VADDESWARAM</div>
 <div id="status" class="status">బైబిల్ వాక్యాలు లోడ్ అవుతున్నాయి…</div>
 <section class="poster" id="poster" hidden>
- <div class="glow"></div>
  <div class="top">
   <div class="brandline">HALLELUJAH MINISTRIES VADDESWARAM</div>
-  <div class="heading">ఈ రోజు బైబిల్ వాక్యం</div>
+  <div class="heading">ఈ రోజు <span class="accent">బైబిల్</span> వాక్యం</div>
   <div class="rule"></div>
   <div class="date" id="date-label"></div>
   <div class="theme" id="theme-label"></div>
  </div>
- <div class="content">
+ <div class="verses">
   <div class="verse-card">
-   <div class="lang">TELUGU · IRV 2019</div>
+   <div class="lang">తెలుగు · IRV 2019</div>
    <div class="verse" id="verse-te"></div>
    <div class="ref" id="ref-te"></div>
   </div>
@@ -64,10 +65,11 @@ select{padding:10px;border:1px solid #c8cada;border-radius:10px;background:white
    <div class="ref" id="ref-en"></div>
   </div>
  </div>
+ <div class="scene" id="scene"><div class="scene-label" id="scene-label"></div></div>
  <div class="bottom">
   <div class="rule"></div>
   <div class="footer">దేవుని వాక్యము మనకు వెలుగు</div>
-  <div class="credits">TELUGU IRV 2019 · ENGLISH WEB · HALLELUJAH MINISTRIES</div>
+  <div class="credits">TELUGU IRV 2019 · ENGLISH WEB · HALLELUJAH MINISTRIES VADDESWARAM</div>
  </div>
 </section>
 <div class="controls">
@@ -85,10 +87,20 @@ select{padding:10px;border:1px solid #c8cada;border-radius:10px;background:white
 <script>
 let daily=[],selected=null,month=Number(new URLSearchParams(location.search).get("month"));
 const $=id=>document.getElementById(id);
-function fitVerse(el,max=16,min=10){
- let size=max;el.style.fontSize=size+"px";
- while(el.scrollHeight>el.clientHeight+1&&size>min){size-=.5;el.style.fontSize=size+"px";}
-}
+const scenes={
+ "Trust in God":["https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop","Trust in the Lord"],
+ "God's Love":["https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&auto=format&fit=crop","God's unfailing love"],
+ "Faith":["https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&auto=format&fit=crop","Walk by faith"],
+ "Salvation in Christ":["https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&auto=format&fit=crop","Hope in Christ"],
+ "Wisdom":["https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&auto=format&fit=crop","Walk in wisdom"],
+ "Prayer":["https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&auto=format&fit=crop","A life of prayer"],
+ "Strength":["https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&auto=format&fit=crop","Strength from God"],
+ "Peace":["https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&auto=format&fit=crop","Peace be with you"],
+ "Family and Relationships":["https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&auto=format&fit=crop","Love one another"],
+ "Holy Spirit":["https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&auto=format&fit=crop","Led by the Spirit"],
+ "Thanksgiving":["https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop","Give thanks to the Lord"],
+ "Hope and Christ":["https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200&auto=format&fit=crop","Our hope is in Christ"]
+};
 function setDay(day){
  const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
  selected=daily.find(x=>x.month===m&&x.day===day);
@@ -99,12 +111,14 @@ function setDay(day){
  $("verse-en").textContent=selected.verse_en;
  $("ref-te").textContent=selected.reference_te;
  $("ref-en").textContent=selected.reference_code;
+ const scene=scenes[selected.theme]||scenes["Hope and Christ"];
+ $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
+ $("scene-label").textContent=scene[1];
  document.title=selected.reference_te+" | Hallelujah Ministries";
- requestAnimationFrame(()=>{fitVerse($("verse-te"));fitVerse($("verse-en"));});
 }
 async function posterBlob(){
  const node=$("poster");
- const canvas=await html2canvas(node,{scale:3,backgroundColor:null,useCORS:true});
+ const canvas=await html2canvas(node,{scale:3,backgroundColor:null,useCORS:true,allowTaint:false});
  return await new Promise(resolve=>canvas.toBlob(resolve,"image/png"));
 }
 $("download").onclick=async()=>{
