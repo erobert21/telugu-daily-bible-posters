@@ -71,6 +71,7 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 </section>
 <div class="controls">
  <button id="download" disabled>పోస్టర్ డౌన్‌లోడ్</button>
+ <button id="download-month" disabled>నెల మొత్తం ZIP డౌన్‌లోడ్</button>
  <button id="share" disabled>షేర్ చేయండి</button>
  <select id="preview-day" aria-label="Preview day" disabled></select>
 </div>
@@ -80,6 +81,7 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 <p class="note">Telugu IRV 2019 is licensed under CC BY-SA 4.0. Full attribution and licence details are available in SCRIPTURE-LICENSES.md.</p>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 const params=new URLSearchParams(location.search);
 let daily=[],selected=null,month=Number(params.get("month")),requestedDay=Number(params.get("day"));
@@ -123,6 +125,28 @@ $("download").onclick=async()=>{
  const blob=await posterBlob(),url=URL.createObjectURL(blob);
  const a=document.createElement("a");a.href=url;a.download=`Bible_Verse_${selected.month_en}_${selected.day}.png`;a.click();URL.revokeObjectURL(url);
 };
+$("download-month").onclick=async()=>{
+ const btn=$("download-month"),oldDay=selected.day,m=selected.month;
+ const monthDays=daily.filter(x=>x.month===m).sort((a,b)=>a.day-b.day);
+ if(typeof JSZip==="undefined"){alert("ZIP library did not load. Please refresh and try again.");return;}
+ btn.disabled=true;
+ try{
+  const zip=new JSZip();
+  for(let i=0;i<monthDays.length;i++){
+   setDay(monthDays[i].day);
+   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+   const blob=await posterBlob();
+   if(!blob)throw new Error("Could not render day "+monthDays[i].day);
+   zip.file(`Bible_Verse_${selected.month_en}_${String(selected.day).padStart(2,"0")}.png`,blob);
+   btn.textContent=`తయారు చేస్తోంది… ${i+1}/${monthDays.length}`;
+  }
+  const archive=await zip.generateAsync({type:"blob"});
+  const url=URL.createObjectURL(archive),a=document.createElement("a");
+  a.href=url;a.download=`Hallelujah_Ministries_${monthDays[0].month_en}_Posters.zip`;a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+ }catch(e){alert("ZIP creation stopped: "+e.message);}
+ finally{setDay(oldDay);btn.disabled=false;btn.textContent="నెల మొత్తం ZIP డౌన్‌లోడ్";}
+};
 $("share").onclick=async()=>{
  const blob=await posterBlob(),file=new File([blob],`Bible_Verse_${selected.month_en}_${selected.day}.png`,{type:"image/png"});
  if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"ఈ రోజు బైబిల్ వాక్యం"});}
@@ -140,7 +164,7 @@ $("share").onclick=async()=>{
   for(let d=1;d<=max;d++){const o=document.createElement("option");o.value=d;o.textContent="Day "+d;if(d===initial)o.selected=true;$("preview-day").appendChild(o);}
   $("preview-day").onchange=()=>setDay(Number($("preview-day").value));
   $("status").hidden=true;$("poster").hidden=false;
-  $("download").disabled=$("share").disabled=$("preview-day").disabled=false;
+  $("download").disabled=$("download-month").disabled=$("share").disabled=$("preview-day").disabled=false;
   setDay(initial);
  }catch(e){$("status").textContent="Verse data is not ready yet. "+e.message+" Please check the GitHub Actions build.";console.error(e);}
 })();
