@@ -108,8 +108,42 @@ function setDay(day){
  $("theme-label").textContent="";
  $("verse-te").textContent=selected.verse_te;
  $("ref-te").textContent=selected.reference_te;
- const scene=selected.reference_code==="PSA 23:2"
-  ? ["https://images.unsplash.com/photo-1772215842204-3e5838af499c?auto=format&fit=crop&fm=jpg&q=85&w=1600","Sheep grazing in a lush green pasture"]
+ const januaryScenes={
+  "PSA 23:1":["photo-1500530855697-b586d89ba3ee","Shepherd's countryside"],
+  "PSA 23:2":["photo-1772215842204-3e5838af499c","Sheep in green pasture beside water"],
+  "PSA 23:3":["photo-1470770841072-f978cf4d019e","A path through a peaceful valley"],
+  "PSA 23:4":["photo-1518837695005-2083093ee35b","A dramatic valley and river"],
+  "PSA 23:5":["photo-1517248135467-4c7edcad34c4","A welcoming table"],
+  "PSA 27:1":["photo-1470252649378-9c29740c9fa8","Sunrise over the hills"],
+  "PSA 27:3":["photo-1500534623283-312aade485b7","Strong mountain landscape"],
+  "PSA 27:5":["photo-1464822759023-fed622ff2c3b","Rocky mountain shelter"],
+  "PSA 27:8":["photo-1500534314209-a25ddb2bd429","A quiet path at dawn"],
+  "PSA 27:10":["photo-1511895426328-dc8714191300","Family embrace"],
+  "PSA 37:1":["photo-1500382017468-9049fed747ef","Open green fields"],
+  "PSA 37:3":["photo-1470770841072-f978cf4d019e","A green country path"],
+  "PSA 37:5":["photo-1500530855697-b586d89ba3ee","A road through the hills"],
+  "PSA 37:8":["photo-1470252649378-9c29740c9fa8","Calm sunrise"],
+  "PSA 37:10":["photo-1511497584788-876760111969","Quiet forest"],
+  "PSA 46:1":["photo-1464822759023-fed622ff2c3b","Strong mountain refuge"],
+  "PSA 46:3":["photo-1518837695005-2083093ee35b","Powerful ocean waves"],
+  "PSA 46:5":["photo-1518005020951-eccb494ad742","City at sunrise"],
+  "PSA 46:8":["photo-1470252649378-9c29740c9fa8","Sunlight over creation"],
+  "PSA 46:10":["photo-1470770841072-f978cf4d019e","Still lake at dawn"],
+  "PSA 62:1":["photo-1500534314209-a25ddb2bd429","Quiet desert landscape"],
+  "PSA 62:3":["photo-1518837695005-2083093ee35b","Waves against the shore"],
+  "PSA 62:5":["photo-1470252649378-9c29740c9fa8","Peaceful sunrise"],
+  "PSA 62:8":["photo-1500530855697-b586d89ba3ee","Open landscape"],
+  "PSA 62:10":["photo-1500382017468-9049fed747ef","Fields and harvest"],
+  "PSA 91:1":["photo-1464822759023-fed622ff2c3b","Mountain shelter"],
+  "PSA 91:3":["photo-1511497584788-876760111969","Forest canopy"],
+  "PSA 91:5":["photo-1470252649378-9c29740c9fa8","Night fading into dawn"],
+  "PSA 91:8":["photo-1500530855697-b586d89ba3ee","Wide open horizon"],
+  "PSA 91:10":["photo-1511895426328-dc8714191300","Safe family home"],
+  "JHN 3:1":["photo-1470770841072-f978cf4d019e","Night sky over hills"]
+ };
+ const selectedScene=januaryScenes[selected.reference_code];
+ const scene=selectedScene
+  ? [`https://images.unsplash.com/${selectedScene[0]}?auto=format&fit=crop&fm=jpg&q=88&w=1600`,selectedScene[1]]
   : (scenes[selected.theme]||scenes["Hope and Christ"]);
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent="";
