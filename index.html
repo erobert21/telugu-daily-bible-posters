@@ -141,6 +141,36 @@ function setDay(day){
   "PSA 91:10":["photo-1511895426328-dc8714191300","Safe family home"],
   "JHN 3:1":["photo-1470770841072-f978cf4d019e","Night sky over hills"]
  };
+ const februaryScenes={
+  "JHN 3:3":["photo-1470252649378-9c29740c9fa8","New life at sunrise"],
+  "JHN 3:5":["photo-1500375592092-40eb2168fd21","Fresh flowing water"],
+  "JHN 3:8":["photo-1500530855697-b586d89ba3ee","Wind moving across an open landscape"],
+  "JHN 3:10":["photo-1503676260728-1c00da094a0b","Learning and teaching"],
+  "JHN 15:1":["photo-1500382017468-9049fed747ef","Vineyard and growing branches"],
+  "JHN 15:3":["photo-1470770841072-f978cf4d019e","A clean, peaceful landscape"],
+  "JHN 15:5":["photo-1515586838455-8f8f8f7b1e5c","Fruit-bearing vine branches"],
+  "JHN 15:8":["photo-1501004318641-b39e6451bec6","Fruitful green growth"],
+  "JHN 15:10":["photo-1511895426328-dc8714191300","Love expressed through care"],
+  "ROM 5:1":["photo-1470252649378-9c29740c9fa8","Peaceful sunrise"],
+  "ROM 5:3":["photo-1464822759023-fed622ff2c3b","Endurance through mountain heights"],
+  "ROM 5:5":["photo-1518837695005-2083093ee35b","The vastness of God's love"],
+  "ROM 5:8":["photo-1500534314209-a25ddb2bd429","Light breaking through darkness"],
+  "ROM 5:10":["photo-1470770841072-f978cf4d019e","A path toward reconciliation"],
+  "1CO 13:1":["photo-1511983650280-7b6b3f4ca6f3","People speaking and sharing"],
+  "1CO 13:3":["photo-1511632765486-a01980e01a18","Generosity and compassion"],
+  "1CO 13:5":["photo-1511895426328-dc8714191300","Kindness within a family"],
+  "1CO 13:8":["photo-1464822759023-fed622ff2c3b","Everlasting mountain landscape"],
+  "1CO 13:10":["photo-1470252649378-9c29740c9fa8","Dawn revealing a brighter day"],
+  "1JN 4:1":["photo-1500534314209-a25ddb2bd429","Discernment and a clear horizon"],
+  "1JN 4:3":["photo-1518837695005-2083093ee35b","Waves and spiritual steadfastness"],
+  "1JN 4:5":["photo-1500530855697-b586d89ba3ee","The world beneath a wide sky"],
+  "1JN 4:8":["photo-1470252649378-9c29740c9fa8","God's love like the morning light"],
+  "1JN 4:10":["photo-1511895426328-dc8714191300","Love shown through sacrifice and care"],
+  "EPH 3:1":["photo-1500534314209-a25ddb2bd429","A journey through hardship"],
+  "EPH 3:3":["photo-1470770841072-f978cf4d019e","A mystery revealed in the landscape"],
+  "EPH 3:5":["photo-1500530855697-b586d89ba3ee","Light and revelation"],
+  "EPH 3:8":["photo-1464822759023-fed622ff2c3b","The immeasurable riches of Christ"]
+ };
  const selectedScene=januaryScenes[selected.reference_code];
  const themedScenes={
   "Trust in God":[["photo-1500530855697-b586d89ba3ee","Trusting God across the journey"],["photo-1464822759023-fed622ff2c3b","A firm mountain refuge"],["photo-1470770841072-f978cf4d019e","A quiet path through the hills"],["photo-1500382017468-9049fed747ef","Open fields beneath the sky"]],
@@ -157,7 +187,8 @@ function setDay(day){
   "Hope and Christ":[["photo-1470770841072-f978cf4d019e","Hope beyond the valley"],["photo-1470252649378-9c29740c9fa8","A new dawn"],["photo-1464822759023-fed622ff2c3b","A lasting hope"],["photo-1500534314209-a25ddb2bd429","Light on the horizon"]]
  };
  const pool=themedScenes[selected.theme]||themedScenes["Hope and Christ"];
- const chosen=selectedScene||pool[(selected.day-1)%pool.length];
+ const februaryScene=selected.month===2?februaryScenes[selected.reference_code]:null;
+ const chosen=selectedScene||februaryScene||pool[(selected.day-1)%pool.length];
  const scene=[`https://images.unsplash.com/${chosen[0]}?auto=format&fit=crop&fm=jpg&q=88&w=1600`,chosen[1]];
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent="";
