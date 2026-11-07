@@ -148,7 +148,7 @@ function setDay(day){
   "JHN 3:10":["photo-1503676260728-1c00da094a0b","Learning and teaching"],
   "JHN 15:1":["photo-1500382017468-9049fed747ef","Vineyard and growing branches"],
   "JHN 15:3":["photo-1470770841072-f978cf4d019e","A clean, peaceful landscape"],
-  "JHN 15:5":["photo-1515586838455-8f8f8f7b1e5c","Fruit-bearing vine branches"],
+  "JHN 15:5":["photo-1500382017468-9049fed747ef","Green growing fields representing life in the vine"],
   "JHN 15:8":["photo-1501004318641-b39e6451bec6","Fruitful green growth"],
   "JHN 15:10":["photo-1511895426328-dc8714191300","Love expressed through care"],
   "ROM 5:1":["photo-1470252649378-9c29740c9fa8","Peaceful sunrise"],
@@ -187,7 +187,7 @@ function setDay(day){
   "Hope and Christ":[["photo-1470770841072-f978cf4d019e","Hope beyond the valley"],["photo-1470252649378-9c29740c9fa8","A new dawn"],["photo-1464822759023-fed622ff2c3b","A lasting hope"],["photo-1500534314209-a25ddb2bd429","Light on the horizon"]]
  };
  const pool=themedScenes[selected.theme]||themedScenes["Hope and Christ"];
- const februaryScene=selected.month===2?februaryScenes[selected.reference_code]:null;
+ const februaryScene=Number(selected.month)===2?februaryScenes[selected.reference_code]:null;
  const chosen=selectedScene||februaryScene||pool[(selected.day-1)%pool.length];
  const scene=[`https://images.unsplash.com/${chosen[0]}?auto=format&fit=crop&fm=jpg&q=88&w=1600`,chosen[1]];
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
