@@ -107,7 +107,7 @@ function setDay(day){
  $("verse-te").textContent=selected.verse_te;
  $("ref-te").textContent=selected.reference_te;
  const scene=selected.reference_code==="PSA 23:2"
-  ? ["https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&auto=format&fit=crop","Peaceful green pasture"]
+  ? ["https://images.unsplash.com/photo-1772215842204-3e5838af499c?auto=format&fit=crop&fm=jpg&q=85&w=1600","Sheep grazing in a lush green pasture"]
   : (scenes[selected.theme]||scenes["Hope and Christ"]);
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent="";
