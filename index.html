@@ -142,9 +142,23 @@ function setDay(day){
   "JHN 3:1":["photo-1470770841072-f978cf4d019e","Night sky over hills"]
  };
  const selectedScene=januaryScenes[selected.reference_code];
- const scene=selectedScene
-  ? [`https://images.unsplash.com/${selectedScene[0]}?auto=format&fit=crop&fm=jpg&q=88&w=1600`,selectedScene[1]]
-  : (scenes[selected.theme]||scenes["Hope and Christ"]);
+ const themedScenes={
+  "Trust in God":[["photo-1500530855697-b586d89ba3ee","Trusting God across the journey"],["photo-1464822759023-fed622ff2c3b","A firm mountain refuge"],["photo-1470770841072-f978cf4d019e","A quiet path through the hills"],["photo-1500382017468-9049fed747ef","Open fields beneath the sky"]],
+  "God's Love":[["photo-1470252649378-9c29740c9fa8","Sunrise as a picture of grace"],["photo-1511895426328-dc8714191300","Family love and care"],["photo-1500534314209-a25ddb2bd429","Warm light over the landscape"],["photo-1470770841072-f978cf4d019e","A peaceful valley"]],
+  "Faith":[["photo-1500534623283-312aade485b7","A journey of faith"],["photo-1464822759023-fed622ff2c3b","Steadfast mountains"],["photo-1500530855697-b586d89ba3ee","A wide horizon"],["photo-1470252649378-9c29740c9fa8","First light at dawn"]],
+  "Salvation in Christ":[["photo-1470770841072-f978cf4d019e","A path toward hope"],["photo-1500534314209-a25ddb2bd429","Light breaking over the hills"],["photo-1518837695005-2083093ee35b","Waves and the open sea"],["photo-1500530855697-b586d89ba3ee","A new horizon"]],
+  "Wisdom":[["photo-1500534314209-a25ddb2bd429","A thoughtful path"],["photo-1470770841072-f978cf4d019e","A winding way through the valley"],["photo-1511497584788-876760111969","Quiet forest wisdom"],["photo-1500382017468-9049fed747ef","A field in the morning light"]],
+  "Prayer":[["photo-1500534623283-312aade485b7","A quiet place for prayer"],["photo-1470252649378-9c29740c9fa8","Morning stillness"],["photo-1518837695005-2083093ee35b","The sea in quiet reflection"],["photo-1470770841072-f978cf4d019e","A peaceful place apart"]],
+  "Strength":[["photo-1518837695005-2083093ee35b","Strength amid the waves"],["photo-1464822759023-fed622ff2c3b","Mighty mountain peaks"],["photo-1500530855697-b586d89ba3ee","A strong open landscape"],["photo-1500382017468-9049fed747ef","Steady fields under heaven"]],
+  "Peace":[["photo-1470252649378-9c29740c9fa8","Peaceful sunrise"],["photo-1470770841072-f978cf4d019e","Still waters in the valley"],["photo-1511497584788-876760111969","Quiet forest retreat"],["photo-1500534314209-a25ddb2bd429","Calm mountain horizon"]],
+  "Family and Relationships":[["photo-1511895426328-dc8714191300","Family togetherness"],["photo-1511983650280-7b6b3f4ca6f3","A family sharing life"],["photo-1511632765486-a01980e01a18","Friends and fellowship"],["photo-1529156069898-49953e39b3ac","Community and friendship"]],
+  "Holy Spirit":[["photo-1470252649378-9c29740c9fa8","Light and renewal"],["photo-1500534314209-a25ddb2bd429","A fresh horizon"],["photo-1470770841072-f978cf4d019e","A path led through the valley"],["photo-1518837695005-2083093ee35b","Wind across the water"]],
+  "Thanksgiving":[["photo-1500382017468-9049fed747ef","Harvest fields"],["photo-1470252649378-9c29740c9fa8","A grateful new morning"],["photo-1500530855697-b586d89ba3ee","Creation's abundance"],["photo-1517248135467-4c7edcad34c4","A table of gratitude"]],
+  "Hope and Christ":[["photo-1470770841072-f978cf4d019e","Hope beyond the valley"],["photo-1470252649378-9c29740c9fa8","A new dawn"],["photo-1464822759023-fed622ff2c3b","A lasting hope"],["photo-1500534314209-a25ddb2bd429","Light on the horizon"]]
+ };
+ const pool=themedScenes[selected.theme]||themedScenes["Hope and Christ"];
+ const chosen=selectedScene||pool[(selected.day-1)%pool.length];
+ const scene=[`https://images.unsplash.com/${chosen[0]}?auto=format&fit=crop&fm=jpg&q=88&w=1600`,chosen[1]];
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent="";
  document.title=selected.reference_te+" | Hallelujah Ministries";
