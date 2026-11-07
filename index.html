@@ -29,7 +29,6 @@ main{width:min(100%,620px);margin:auto}
 /* Give the Telugu scripture clear visual priority over the English translation. */
 #verse-te{font-size:clamp(15px,3.35vw,21px);line-height:1.4;font-weight:800}
 .verse-card:first-child{padding:5px 10px}
-#verse-en{font-size:clamp(9px,1.85vw,11.5px);line-height:1.3;font-weight:500}
 .ref{font-size:clamp(9px,2.1vw,12px);font-weight:800;color:#a64e0c;margin-top:2px}
 .scene{position:relative;z-index:1;flex:1 1 auto;min-height:0;margin-top:2%;background:#c87928;overflow:hidden}
 .scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fffaf322 0%,#fffaf300 16%),linear-gradient(0deg,#35170c55 0%,transparent 38%),var(--scene);background-size:cover;background-position:center 42%;background-repeat:no-repeat}
@@ -63,17 +62,12 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
    <div class="verse" id="verse-te"></div>
    <div class="ref" id="ref-te"></div>
   </div>
-  <div class="verse-card">
-   <div class="lang">ENGLISH · WORLD ENGLISH BIBLE</div>
-   <div class="verse" id="verse-en"></div>
-   <div class="ref" id="ref-en"></div>
-  </div>
  </div>
  <div class="scene" id="scene"><div class="scene-label" id="scene-label"></div></div>
  <div class="bottom">
   <div class="rule"></div>
   <div class="footer">దేవుని వాక్యము మనకు వెలుగు</div>
-  <div class="credits">TELUGU IRV 2019 · ENGLISH WEB · HALLELUJAH MINISTRIES VADDESWARAM</div>
+  <div class="credits">TELUGU IRV 2019 · HALLELUJAH MINISTRIES VADDESWARAM</div>
  </div>
 </section>
 <div class="controls">
@@ -83,9 +77,8 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 </div>
 <div class="readlinks">
  <a href="https://ebible.org/tel2017/" target="_blank" rel="noopener">Telugu IRV source ↗</a>
- <a href="https://ebible.org/engwebp/" target="_blank" rel="noopener">English WEB source ↗</a>
 </div>
-<p class="note">Telugu IRV 2019 is licensed under CC BY-SA 4.0. English WEB text is public domain. Full attribution and licence details are available in SCRIPTURE-LICENSES.md.</p>
+<p class="note">Telugu IRV 2019 is licensed under CC BY-SA 4.0. Full attribution and licence details are available in SCRIPTURE-LICENSES.md.</p>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
@@ -112,9 +105,7 @@ function setDay(day){
  $("date-label").textContent=selected.month_te+" "+selected.day+" · "+selected.month_en+" "+selected.day;
  $("theme-label").textContent=selected.theme||"";
  $("verse-te").textContent=selected.verse_te;
- $("verse-en").textContent=selected.verse_en;
  $("ref-te").textContent=selected.reference_te;
- $("ref-en").textContent=selected.reference_code;
  const scene=scenes[selected.theme]||scenes["Hope and Christ"];
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent=scene[1];
@@ -131,15 +122,15 @@ $("download").onclick=async()=>{
 };
 $("share").onclick=async()=>{
  const blob=await posterBlob(),file=new File([blob],`Bible_Verse_${selected.month_en}_${selected.day}.png`,{type:"image/png"});
- if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"Today's Bilingual Bible Verse"});}
+ if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:"ఈ రోజు బైబిల్ వాక్యం"});}
  else{const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=file.name;a.click();URL.revokeObjectURL(url);alert("Image downloaded. You can share it from your gallery.");}
 };
 (async()=>{
  try{
   const response=await fetch("./data/daily-verses.json");
-  if(!response.ok)throw new Error("daily-verses.json not found. Run the bilingual verse build workflow.");
+  if(!response.ok)throw new Error("daily-verses.json not found. Run the Telugu verse build workflow.");
   daily=await response.json();
-  if(!daily.length)throw new Error("The bilingual verse data file is empty.");
+  if(!daily.length)throw new Error("The Telugu verse data file is empty.");
   const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
   const max=daily.filter(x=>x.month===m).length,initial=Math.min(new Date().getDate(),max||1);
   for(let d=1;d<=max;d++){const o=document.createElement("option");o.value=d;o.textContent="Day "+d;if(d===initial)o.selected=true;$("preview-day").appendChild(o);}
