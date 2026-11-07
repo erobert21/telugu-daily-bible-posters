@@ -8,34 +8,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#32170d;--orange:#c85b08;--gold:#e99a16;--paper:#fffaf3}
+:root{--ink:#fff7ee;--maroon:#681b3b;--gold:#f4c542;--peach:#f7d6bb}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:18px;background:#f3eee6;color:var(--ink);font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
+body{margin:0;min-height:100vh;padding:18px;background:#f2e9e1;color:#32170d;font-family:"Noto Sans Telugu",sans-serif;display:flex;justify-content:center}
 main{width:min(100%,620px);margin:auto}
-.brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:2px;margin:0 0 14px;color:#4b2616}
-.poster{position:relative;overflow:hidden;aspect-ratio:1/1;border-radius:18px;color:var(--ink);background:var(--paper);box-shadow:0 16px 44px #4a241b24;display:flex;flex-direction:column;text-align:center}
-.poster:before{content:"";position:absolute;inset:12px;border:1px solid #c77a3c88;border-radius:12px;pointer-events:none;z-index:4}
-.top{position:relative;z-index:2;padding:5% 7% 0;flex:0 0 auto}
-.brandline{font:800 clamp(9px,2.25vw,13px) Arial,sans-serif;letter-spacing:1px;line-height:1.35;color:#7c3512}
-.heading{font-size:clamp(19px,4.5vw,28px);font-weight:800;line-height:1.2;margin:3px auto 0;color:#35180d}
-.heading .accent{color:#d66b0a}
-.rule{height:3px;width:58px;background:linear-gradient(90deg,#a94708,#f2a51a);margin:6px auto}
-.date{font-size:clamp(10px,2.35vw,14px);font-weight:800;color:#633016}
-.theme{font:700 clamp(8px,2vw,11px) Arial,sans-serif;letter-spacing:1.3px;color:#a94e0b;margin-top:2px;text-transform:uppercase}
-.verses{position:relative;z-index:3;padding:1.3% 6% 0;display:flex;flex-direction:column;gap:5px;flex:0 0 auto}
-.verse-card{background:#fffaf0ed;border:1px solid #d8b28a;border-radius:10px;padding:3px 9px;text-align:center}
-.lang{font:800 clamp(8px,1.9vw,10px) Arial,sans-serif;letter-spacing:1.2px;color:#a64e0c;margin-bottom:2px}
-.verse{font-size:clamp(9px,2.05vw,12.5px);line-height:1.27;font-weight:600;overflow-wrap:anywhere;color:#32170d}
-/* Give the Telugu scripture clear visual priority over the English translation. */
-#verse-te{font-size:clamp(15px,3.35vw,21px);line-height:1.4;font-weight:800}
-.verse-card:first-child{padding:5px 10px}
-.ref{font-size:clamp(9px,2.1vw,12px);font-weight:800;color:#a64e0c;margin-top:2px}
-.scene{position:relative;z-index:1;flex:1 1 auto;min-height:0;margin-top:2%;background:#c87928;overflow:hidden}
-.scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fffaf322 0%,#fffaf300 16%),linear-gradient(0deg,#35170c55 0%,transparent 38%),var(--scene);background-size:cover;background-position:center 42%;background-repeat:no-repeat}
-.scene-label{position:absolute;left:4%;bottom:25%;z-index:2;color:white;text-align:left;text-shadow:0 2px 8px #32170d88;font-family:Georgia,serif;font-size:clamp(17px,4.2vw,28px);font-style:italic;font-weight:700;background:linear-gradient(110deg,#b84a00ed,#e98b0de8);padding:7px 20px 8px 14px;clip-path:polygon(3% 8%,96% 0,100% 78%,88% 100%,0 88%)}
-.bottom{position:absolute;z-index:3;left:0;right:0;bottom:0;background:linear-gradient(0deg,#29150fe0,transparent);padding:8px 5% 2%;flex:0 0 auto}
+.brand{text-align:center;font:800 12px Arial,sans-serif;letter-spacing:2px;margin:0 0 14px;color:#5b2036}
+.poster{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:1/1;border-radius:18px;color:var(--ink);background:var(--peach);box-shadow:0 16px 44px #4a241b24;display:block;text-align:center}
+.poster:before{content:"";position:absolute;inset:0;background:linear-gradient(174deg,transparent 0 23%,#70203f 23.2% 82%,transparent 82.2%);z-index:-1}
+.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#fff6ecaa,transparent 44%),linear-gradient(315deg,#f8d9c1 0 14%,transparent 14.2%);z-index:-1;pointer-events:none}
+.top{position:absolute;z-index:3;top:5%;left:5%;width:42%;padding:0;flex:0 0 auto;color:#641d3b}
+.brandline{font:800 clamp(9px,2.1vw,13px) Arial,sans-serif;letter-spacing:1px;line-height:1.35;color:#641d3b}
+.heading{font-size:clamp(18px,4.2vw,27px);font-weight:800;line-height:1.2;margin:8px auto;color:#641d3b}
+.heading .accent{color:#d18a18}
+.rule{height:3px;width:58px;background:linear-gradient(90deg,#a94708,#f2c542);margin:7px auto}
+.date{font-size:clamp(11px,2.5vw,15px);font-weight:800;color:#fff0d8}
+.theme{display:none}
+.verses{position:absolute;z-index:3;left:6%;right:6%;bottom:13%;padding:0;display:flex;flex-direction:column;gap:5px}
+.verse-card{background:transparent;border:0;border-radius:0;padding:0;text-align:center}
+.lang{display:inline-block;font:800 clamp(9px,2vw,12px) Arial,sans-serif;letter-spacing:1px;color:#70203f;background:#ffe2c9;border-radius:99px;padding:4px 15px;margin-bottom:7px}
+.verse{font-size:clamp(9px,2.05vw,12.5px);line-height:1.27;font-weight:600;overflow-wrap:anywhere;color:#fff7ee}
+#verse-te{font-size:clamp(19px,4.25vw,29px);line-height:1.45;font-weight:800;text-shadow:0 2px 2px #3b1027}
+.verse-card:first-child{padding:0}
+.ref{font-size:clamp(12px,2.5vw,17px);font-weight:800;color:#ffd34d;margin-top:9px}
+.scene{position:absolute;z-index:2;top:5%;right:5%;width:49%;height:48%;min-height:0;margin:0;background:#c87928;overflow:hidden;border:7px solid #fff;border-radius:47% 53% 43% 57% / 38% 38% 62% 62%;transform:rotate(7deg);box-shadow:9px 12px 0 #7d1d4c}
+.scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fff2 0%,transparent 22%),var(--scene);background-size:cover;background-position:center 42%;background-repeat:no-repeat}
+.scene-label{display:none}
+.bottom{position:absolute;z-index:3;left:0;right:0;bottom:0;background:linear-gradient(0deg,#f7d6bb 0 100%);clip-path:polygon(0 38%,100% 0,100% 100%,0 100%);padding:7% 5% 2%;height:17%;flex:0 0 auto}
 .footer{display:none}
-.credits{font:800 clamp(6px,1.35vw,7px) Arial,sans-serif;letter-spacing:.7px;color:#fff;margin-top:0;text-shadow:0 1px 4px #251008}
+.credits{font:800 clamp(7px,1.5vw,9px) Arial,sans-serif;letter-spacing:.7px;color:#70203f;margin-top:0;text-shadow:none}
 .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
 button{border:0;border-radius:999px;padding:12px 18px;font:700 14px "Noto Sans Telugu",sans-serif;background:#51230f;color:#fff;cursor:pointer}
 select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white}
@@ -102,18 +102,19 @@ function setDay(day){
  const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
  selected=daily.find(x=>x.month===m&&x.day===day);
  if(!selected)return;
- $("date-label").textContent=selected.month_te+" "+selected.day+" · "+selected.month_en+" "+selected.day;
- $("theme-label").textContent=selected.theme||"";
+ $("date-label").textContent=selected.month_te+" "+selected.day;
+ $("theme-label").textContent="";
  $("verse-te").textContent=selected.verse_te;
  $("ref-te").textContent=selected.reference_te;
  const scene=scenes[selected.theme]||scenes["Hope and Christ"];
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
- $("scene-label").textContent=scene[1];
+ $("scene-label").textContent="";
  document.title=selected.reference_te+" | Hallelujah Ministries";
 }
 async function posterBlob(){
  const node=$("poster");
- const canvas=await html2canvas(node,{scale:3,backgroundColor:null,useCORS:true,allowTaint:false});
+ const exportScale=1247/node.getBoundingClientRect().width;
+ const canvas=await html2canvas(node,{scale:exportScale,backgroundColor:null,useCORS:true,allowTaint:false,width:node.offsetWidth,height:node.offsetHeight});
  return await new Promise(resolve=>canvas.toBlob(resolve,"image/png"));
 }
 $("download").onclick=async()=>{
