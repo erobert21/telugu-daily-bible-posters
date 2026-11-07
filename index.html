@@ -58,7 +58,6 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
  </div>
  <div class="verses">
   <div class="verse-card">
-   <div class="lang">తెలుగు · IRV 2019</div>
    <div class="verse" id="verse-te"></div>
    <div class="ref" id="ref-te"></div>
   </div>
@@ -82,7 +81,8 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-let daily=[],selected=null,month=Number(new URLSearchParams(location.search).get("month"));
+const params=new URLSearchParams(location.search);
+let daily=[],selected=null,month=Number(params.get("month")),requestedDay=Number(params.get("day"));
 const $=id=>document.getElementById(id);
 const scenes={
  "Trust in God":["https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop","Trust in the Lord"],
@@ -106,7 +106,9 @@ function setDay(day){
  $("theme-label").textContent="";
  $("verse-te").textContent=selected.verse_te;
  $("ref-te").textContent=selected.reference_te;
- const scene=scenes[selected.theme]||scenes["Hope and Christ"];
+ const scene=selected.reference_code==="PSA 23:2"
+  ? ["https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&auto=format&fit=crop","Peaceful stream"]
+  : (scenes[selected.theme]||scenes["Hope and Christ"]);
  $("scene").style.setProperty("--scene","url('"+scene[0]+"')");
  $("scene-label").textContent="";
  document.title=selected.reference_te+" | Hallelujah Ministries";
@@ -133,7 +135,8 @@ $("share").onclick=async()=>{
   daily=await response.json();
   if(!daily.length)throw new Error("The Telugu verse data file is empty.");
   const m=Number.isInteger(month)&&month>=1&&month<=12?month:(new Date()).getMonth()+1;
-  const max=daily.filter(x=>x.month===m).length,initial=Math.min(new Date().getDate(),max||1);
+  const max=daily.filter(x=>x.month===m).length;
+  const initial=(Number.isInteger(requestedDay)&&requestedDay>=1&&requestedDay<=max)?requestedDay:Math.min(new Date().getDate(),max||1);
   for(let d=1;d<=max;d++){const o=document.createElement("option");o.value=d;o.textContent="Day "+d;if(d===initial)o.selected=true;$("preview-day").appendChild(o);}
   $("preview-day").onchange=()=>setDay(Number($("preview-day").value));
   $("status").hidden=true;$("poster").hidden=false;
