@@ -16,9 +16,9 @@ main{width:min(100%,620px);margin:auto}
 .poster{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:1/1;border-radius:18px;color:var(--ink);background:var(--peach);box-shadow:0 16px 44px #4a241b24;display:block;text-align:center}
 .poster:before{content:"";position:absolute;inset:0;background:linear-gradient(174deg,transparent 0 23%,#70203f 23.2% 82%,transparent 82.2%);z-index:-1}
 .poster:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#fff6ecaa,transparent 44%),linear-gradient(315deg,#f8d9c1 0 14%,transparent 14.2%);z-index:-1;pointer-events:none}
-.top{position:absolute;z-index:3;top:5%;left:5%;width:42%;padding:0;flex:0 0 auto;color:#641d3b}
-.brandline{font:800 clamp(9px,2.1vw,13px) Arial,sans-serif;letter-spacing:1px;line-height:1.35;color:#641d3b}
-.heading{font-size:clamp(18px,4.2vw,27px);font-weight:800;line-height:1.2;margin:8px auto;color:#641d3b}
+.top{position:absolute;z-index:3;top:7%;left:4%;width:41%;max-width:41%;padding:0;flex:0 0 auto;color:#641d3b}
+.brandline{font:800 clamp(8px,1.65vw,11px) Arial,sans-serif;letter-spacing:.8px;line-height:1.35;color:#641d3b}
+.heading{font-size:clamp(15px,3.1vw,21px);font-weight:800;line-height:1.25;margin:8px auto;color:#641d3b;max-width:100%;overflow-wrap:anywhere}
 .heading .accent{color:#d18a18}
 .rule{height:3px;width:58px;background:linear-gradient(90deg,#a94708,#f2c542);margin:7px auto}
 .date{font-size:clamp(11px,2.5vw,15px);font-weight:800;color:#fff0d8}
@@ -30,7 +30,7 @@ main{width:min(100%,620px);margin:auto}
 #verse-te{font-size:clamp(19px,4.25vw,29px);line-height:1.45;font-weight:800;text-shadow:0 2px 2px #3b1027}
 .verse-card:first-child{padding:0}
 .ref{font-size:clamp(12px,2.5vw,17px);font-weight:800;color:#ffd34d;margin-top:9px}
-.scene{position:absolute;z-index:2;top:5%;right:5%;width:49%;height:48%;min-height:0;margin:0;background:#c87928;overflow:hidden;border:7px solid #fff;border-radius:47% 53% 43% 57% / 38% 38% 62% 62%;transform:rotate(7deg);box-shadow:9px 12px 0 #7d1d4c}
+.scene{position:absolute;z-index:2;top:5%;right:4%;width:48%;height:47%;min-height:0;margin:0;background:#c87928;overflow:hidden;border:7px solid #fff;border-radius:47% 53% 43% 57% / 38% 38% 62% 62%;transform:rotate(5deg);box-shadow:9px 12px 0 #7d1d4c}
 .scene:before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,#fff2 0%,transparent 22%),var(--scene);background-size:cover;background-position:center 42%;background-repeat:no-repeat}
 .scene-label{display:none}
 .bottom{position:absolute;z-index:3;left:0;right:0;bottom:0;background:linear-gradient(0deg,#f7d6bb 0 100%);clip-path:polygon(0 38%,100% 0,100% 100%,0 100%);padding:7% 5% 2%;height:17%;flex:0 0 auto}
@@ -51,7 +51,7 @@ select{padding:10px;border:1px solid #c8b6a5;border-radius:10px;background:white
 <section class="poster" id="poster" hidden>
  <div class="top">
   <div class="brandline">HALLELUJAH MINISTRIES VADDESWARAM</div>
-  <div class="heading">ఈ రోజు <span class="accent">బైబిల్</span> వాక్యం</div>
+  <div class="heading">ఈ రోజు<br><span class="accent">బైబిల్ వాక్యం</span></div>
   <div class="rule"></div>
   <div class="date" id="date-label"></div>
   <div class="theme" id="theme-label"></div>
